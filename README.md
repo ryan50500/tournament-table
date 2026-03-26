@@ -1,6 +1,13 @@
-# React + Vite
+# tournament-table
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite implementation of a football tournament results table with scrolling behaviour.
+
+## Setup
+
+```bash
+npm install
+npm run dev
+```
 
 Currently, two official plugins are available:
 
