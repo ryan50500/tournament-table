@@ -1,0 +1,36 @@
+.leagueTable {
+  display: grid;
+  grid-template-columns:
+    80px   /* position        */
+    1fr    /* club            */
+    120px  /* matches played  */
+    80px   /* wins            */
+    80px   /* draws           */
+    80px   /* losses          */
+    120px  /* goals scored    */
+    120px  /* goals against   */
+    130px  /* goal difference */
+    80px   /* points          */
+    100px; /* last 5          */
+}
+
+.leagueTable__header,
+.leagueTable__row {
+  display: contents;
+}
+
+/* Style all the individual cell spans */
+.leagueTable__header span,
+.leagueTable__row span {
+  padding: 12px 8px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center; /* Vertically center the text */
+}
+
+.leagueTable__header span {
+  font-weight: bold;
+  background-color: #f4f4f4;
+  border-bottom: 2px solid #ccc; 
+}
+
