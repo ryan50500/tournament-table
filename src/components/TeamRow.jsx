@@ -2,17 +2,17 @@
 export default function TeamRow({ team }) {
   return (
     <div className="leagueTable__row">
-      <span className="leagueTable__cell--pos leagueTable__cell--sticky">{team.pos}</span>
-      <span className="leagueTable__cell--club leagueTable__cell--sticky">{team.club}</span>
-      <span className="leagueTable__cell--mp">{team.played}</span>
-      <span className="leagueTable__cell--w">{team.won}</span>
-      <span className="leagueTable__cell--d">{team.drawn}</span>
-      <span className="leagueTable__cell--l">{team.lost}</span>
-      <span className="leagueTable__cell--gf">{team.gf}</span>
-      <span className="leagueTable__cell--ga">{team.ga}</span>
-      <span className="leagueTable__cell--gd">{team.gd}</span>
-      <span className="leagueTable__cell--pts">{team.pts}</span>
-      <span className="leagueTable__cell--last5">{team.last5.join(' ')}</span>
+      <div className="leagueTable__cell--pos leagueTable__cell--sticky">{team.pos}</div>
+      <div className="leagueTable__cell--club leagueTable__cell--sticky">{team.club}</div>
+      <div className="leagueTable__cell--mp">{team.played}</div>
+      <div className="leagueTable__cell--w">{team.won}</div>
+      <div className="leagueTable__cell--d">{team.drawn}</div>
+      <div className="leagueTable__cell--l">{team.lost}</div>
+      <div className="leagueTable__cell--gf">{team.gf}</div>
+      <div className="leagueTable__cell--ga">{team.ga}</div>
+      <div className="leagueTable__cell--gd">{team.gd}</div>
+      <div className="leagueTable__cell--pts">{team.pts}</div>
+      <div className="leagueTable__cell--last5">{team.last5.join(' ')}</div>
     </div>
   )
 }

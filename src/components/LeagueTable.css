@@ -1,17 +1,32 @@
+/* 
+ * PERFORMANCE OPTIMIZATION:
+ * Uncomment if displaying live data. This prevents layout recalculations
+ * on the rest of the page when table content updates frequently.
+ *
+ * .leagueTable__wrapper {
+ *   contain: layout;
+ * }
+ */
+
+.leagueTable__wrapper {
+  overflow-x: auto; /* Enables horizontal scroll on table only */
+}
+
 .leagueTable {
   display: grid;
+  min-width: max-content; /* Prevents grid from shrinking columns to fit container */
   grid-template-columns:
-    80px   /* position        */
-    1fr    /* club            */
-    120px  /* matches played  */
-    80px   /* wins            */
-    80px   /* draws           */
-    80px   /* losses          */
-    120px  /* goals scored    */
-    120px  /* goals against   */
-    130px  /* goal difference */
-    80px   /* points          */
-    100px; /* last 5          */
+    minmax(80px, max-content)   /* position        */
+    1fr                         /* club            */
+    minmax(120px, max-content)  /* matches played  */
+    minmax(80px, max-content)   /* wins            */
+    minmax(80px, max-content)   /* draws           */
+    minmax(80px, max-content)   /* losses          */
+    minmax(120px, max-content)  /* goals scored    */
+    minmax(120px, max-content)  /* goals against   */
+    minmax(130px, max-content)  /* goal difference */
+    minmax(80px, max-content)   /* points          */
+    minmax(100px, max-content); /* last 5          */
 }
 
 .leagueTable__header,
@@ -19,18 +34,18 @@
   display: contents;
 }
 
-/* Style all the individual cell spans */
-.leagueTable__header span,
-.leagueTable__row span {
+/* Style all the individual cell divs */
+.leagueTable__header div,
+.leagueTable__row div {
   padding: 12px 8px;
   border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center; /* Vertically center the text */
+  justify-content: flex-start;
+  white-space: nowrap;
 }
 
-.leagueTable__header span {
+.leagueTable__header div {
   font-weight: bold;
   background-color: #f4f4f4;
-  border-bottom: 2px solid #ccc; 
+  border-bottom: 2px solid #ccc;
 }
 
