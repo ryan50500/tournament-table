@@ -40,14 +40,22 @@
 .leagueTable__row div {
   padding: 12px 8px;
   border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
   justify-content: flex-start;
   white-space: nowrap;
   text-align: center;
 }
 
+/* Remove right border on last column to avoid double border with wrapper */
+.leagueTable__header div:last-child,
+.leagueTable__row div:last-child {
+  border-right: none;
+}
+
 .leagueTable__header div {
   font-weight: bold;
   background-color: #f4f4f4;
+  border-top: 1px solid #ddd;
   border-bottom: 2px solid #ccc;
 }
 
