@@ -8,17 +8,12 @@
  * }
  */
 
-.leagueTable__wrapper {
-  overflow-x: auto; /* Enables horizontal scroll on table only */
-  border-inline: 1px solid #ddd;
-}
-
 .leagueTable {
   display: grid;
   min-width: max-content; /* Prevents grid from shrinking columns to fit container */
   grid-template-columns:
     minmax(80px, max-content)   /* position        */
-    1fr                         /* club            */
+    minmax(150px, max-content)  /* club            */
     minmax(120px, max-content)  /* matches played  */
     minmax(80px, max-content)   /* wins            */
     minmax(80px, max-content)   /* draws           */
@@ -53,9 +48,10 @@
 }
 
 .leagueTable__header div {
+  position: sticky;
+  top: 0;
   font-weight: bold;
   background-color: #f4f4f4;
-  border-top: 1px solid #ddd;
   border-bottom: 2px solid #ccc;
 }
 
