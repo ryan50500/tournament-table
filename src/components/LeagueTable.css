@@ -11,7 +11,7 @@
 .leagueTable__wrapper {
   overflow: auto;
   max-height: 80vh;
-  max-width: 700px; /* Intentionally narrow to demonstrate horizontal sticky columns */
+  max-width: 800px; /* Intentionally narrow to demonstrate horizontal sticky columns */
 }
 
 .leagueTable {
@@ -60,7 +60,7 @@
   z-index: 2;
   font-weight: bold;
   background-color: #f4f4f4;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 3px solid #ccc;
 }
 
 /* Horizontally sticky Position column */
@@ -72,16 +72,18 @@
 }
 
 /* Horizontally sticky Club column — left offset matches Position column width */
-.leagueTable__cell--club {
+.leagueTable .leagueTable__cell--club {
   position: sticky;
   left: 96px;
-  z-index: 1;
+  z-index: 2;
   background-color: #fff;
+  border-right: 3px solid #ccc;
 }
 
 /* Header intersection cells sit above both sticky axes */
 .leagueTable__header .leagueTable__cell--pos,
 .leagueTable__header .leagueTable__cell--club {
   z-index: 3;
+  background-color:#f4f4f4;
 }
 

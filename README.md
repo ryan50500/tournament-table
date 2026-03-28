@@ -13,7 +13,7 @@ npm run dev
 
 ### Why CSS Grid instead of `<table>`
 
-The obvious choice for tabular data would be using `<table>`, and that was my first instinct. The problem is I anticipated that using `position: sticky` on tables could be unreliable because in my experience, styling HTML tables exactly as you want can be difficult. Since the brief specifically required both a sticky header row and sticky columns, I decided to use divs and CSS Grid which gives much more control over sticky positioning.
+The obvious choice for tabular data is <table>, and that was my initial instinct. However, I avoided it because position: sticky can be unreliable with table elements, and styling tables precisely can be difficult. Since the brief required both a sticky header row and sticky columns for “position” and “club”, I chose to use divs with CSS Grid, which provides more control over this kind of layout.
 
 ### Column sizing with `minmax`
 
