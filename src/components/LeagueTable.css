@@ -12,7 +12,7 @@
   display: grid;
   min-width: max-content; /* Prevents grid from shrinking columns to fit container */
   grid-template-columns:
-    minmax(80px, max-content)   /* position        */
+    96px                        /* position — set width to 96px so we know by how many pixels club column should be offset */
     minmax(150px, max-content)  /* club            */
     minmax(120px, max-content)  /* matches played  */
     minmax(80px, max-content)   /* wins            */
@@ -50,8 +50,32 @@
 .leagueTable__header div {
   position: sticky;
   top: 0;
+  /* NEW ADDITION */
+  z-index: 2;
   font-weight: bold;
   background-color: #f4f4f4;
   border-bottom: 2px solid #ccc;
+}
+
+/* Horizontally sticky Position column */
+.leagueTable__cell--pos {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+
+/* Horizontally sticky Club column — left offset matches Position column width */
+.leagueTable__cell--club {
+  position: sticky;
+  left: 96px;
+  z-index: 1;
+  background-color: #fff;
+}
+
+/* Header intersection cells sit above both sticky axes */
+.leagueTable__header .leagueTable__cell--pos,
+.leagueTable__header .leagueTable__cell--club {
+  z-index: 3;
 }
 
