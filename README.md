@@ -21,7 +21,7 @@ I used React because I prefer building UIs in a component-based structure, which
 
 ### Why CSS Grid instead of `<table>`
 
-The obvious choice for tabular data is `<table>`, and that was my initial instinct. However, `<table>` elements can be tricky to style precisely with CSS, so I chose to use `<div>` elements with CSS Grid, which gives more control over the layout.
+The obvious choice for tabular data is `<table>`, and that was my initial instinct. However, CSS Grid gives more layout flexibility with better control over column widths and row heights. Tables also don't scale down well on smaller screens if mobile support was ever needed.
 
 ### Column sizing with `minmax`
 
@@ -52,3 +52,13 @@ A native `<table>` would be more reliable for accessibility, but this approach w
 ### Sticky column offset is hardcoded
 
 The Club column uses `left: 96px` to position itself sticky, which is just the width of the Position column. It works, but it means the two are coupled. If you ever changed the Position column width, you'd need to remember to update the `left` offset too, otherwise the columns would overlap. Not a problem right now, but worth knowing.
+
+## Edge Cases
+
+### Empty data
+
+If the teams array is empty, `TeamList` renders a "No data available." message rather than silently rendering nothing.
+
+### Missing fields
+
+If a team object is missing a field, `TeamRow` displays `'-'` as a fallback so the table still renders cleanly rather than showing a blank cell.
