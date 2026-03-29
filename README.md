@@ -1,8 +1,12 @@
 # Tournament Table
 
-A Premier League standings table built with React and Vite. The table supports vertical and horizontal scrolling, with a sticky header row and sticky position/club columns. The spreadsheet was treated as a functional wireframe; the implementation focuses on replicating the scrolling behaviour rather than matching it visually pixel-for-pixel.
+A Premier League standings table built with React and Vite. The table supports vertical and horizontal scrolling, with a sticky header row and sticky position/club columns. The spreadsheet was treated as a functional wireframe; the implementation focuses on replicating the scrolling behaviour rather than matching it visually pixel-for-pixel. Responsive/mobile behaviour is out of scope for this brief — the table is optimised for desktop viewport widths.
 
 ## Setup
+
+Live demo: https://ryan50500.github.io/tournament-table/
+
+Or run locally:
 
 ```bash
 npm install
@@ -17,7 +21,7 @@ I used React because I prefer building UIs in a component-based structure, which
 
 ### Why CSS Grid instead of `<table>`
 
-The obvious choice for tabular data is <table>, and that was my initial instinct. However, I avoided it because position: sticky can be unreliable with table elements, and styling tables precisely can be difficult. Since the brief required both a sticky header row and sticky columns for “position” and “club”, I chose to use `<div>` elements with CSS Grid, which provides more control over this kind of layout.
+The obvious choice for tabular data is `<table>`, and that was my initial instinct. However, `<table>` elements can be tricky to style precisely with CSS, so I chose to use `<div>` elements with CSS Grid, which gives more control over the layout.
 
 ### Column sizing with `minmax`
 
