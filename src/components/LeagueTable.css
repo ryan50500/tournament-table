@@ -56,7 +56,6 @@
 .leagueTable__header div {
   position: sticky;
   top: 0;
-  /* NEW ADDITION */
   z-index: 2;
   font-weight: bold;
   background-color: #f4f4f4;
