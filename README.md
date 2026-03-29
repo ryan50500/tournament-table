@@ -11,6 +11,10 @@ npm run dev
 
 ## Design Decisions
 
+### Why React
+
+I used React because I prefer building UIs in a component-based structure, which makes the layout easier to organise and extend compared to vanilla JavaScript. If this was a more dynamic, frequently updating scoreboard, React would make updates easier to manage than manual DOM updates.
+
 ### Why CSS Grid instead of `<table>`
 
 The obvious choice for tabular data is <table>, and that was my initial instinct. However, I avoided it because position: sticky can be unreliable with table elements, and styling tables precisely can be difficult. Since the brief required both a sticky header row and sticky columns for “position” and “club”, I chose to use `<div>` elements with CSS Grid, which provides more control over this kind of layout.
