@@ -1,8 +1,7 @@
-import mockPremierLeagueStandings from '../data/mockPremierLeagueStandings'
 import TeamRow from './TeamRow'
 
-export default function TeamList() {
-  return mockPremierLeagueStandings.map((team) => (
+export default function TeamList({ teams }) {
+  return teams.map((team) => (
     <TeamRow key={team.club} team={team} />
   ))
 }

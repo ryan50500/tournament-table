@@ -22,21 +22,25 @@ Rather than hardcoding fixed pixel widths for each column, I used `minmax(Xpx, m
 
 ### Performance note
 
-For a static mockup like this, rendering performance is not a concern. But if this were pulling in live data with frequent updates, I would add `contain: layout` to the table wrapper — it tells the browser that changes inside the table don't affect the rest of the page layout, which prevents unnecessary reflows on every data update. There's a commented-out example of this in `LeagueTable.css`.
+For a static mockup like this, rendering performance is not a concern. But if this were pulling in live data with frequent updates, I would add `contain: layout` to the table wrapper as it tells the browser that changes inside the table don't affect the rest of the page layout, which prevents unnecessary reflows on every data update. There's a commented-out example of this in `LeagueTable.css`.
 
 ## Trade-offs
 
 ### Adding rows is easy, adding columns is not
 
-The component structure optimises for adding new rows. Adding a new team just means appending an object to the data array — `TeamList` maps over it automatically and `TeamRow` renders it without any other changes needed.
+Rows are easy to extend. To add a team you just push a new object into the data array. `TeamList` loops over it and `TeamRow` just renders it. No other changes needed.
 
-Adding a new column is the opposite. It requires changes in three places at once: a new `<div>` in `TableHeader.jsx`, a matching `<div>` in `TeamRow.jsx`, and a new field on every object in the data source.
+Adding a new column is more tricky. It requires changes in three places at once: a new `<div>` in `TableHeader.jsx`, a matching `<div>` in `TeamRow.jsx`, and a new field on every object in the data source.
 
 
 ### Accessibility trade-offs
 
 This uses `display: contents` on rows to make CSS Grid work nicely.
 
-It looks fine visually, but it can be a bit hit-and-miss for screen readers — sometimes the row roles aren't picked up properly, so the table structure isn't as reliable as a real `<table>`.
+It looks fine visually, but it can be unreliable for screen readers as sometimes the row roles aren't picked up properly, so the table structure isn't as reliable as a real `<table>`.
 
 A native `<table>` would be more reliable for accessibility, but this approach was chosen for layout flexibility (sticky columns, custom grid, etc).
+
+### Sticky column offset is hardcoded
+
+The Club column uses `left: 96px` to position itself sticky, which is just the width of the Position column. It works, but it means the two are coupled. If you ever changed the Position column width, you'd need to remember to update the `left` offset too, otherwise the columns would overlap. Not a problem right now, but worth knowing.
