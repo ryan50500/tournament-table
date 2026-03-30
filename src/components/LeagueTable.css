@@ -62,9 +62,13 @@
   border-bottom: 3px solid #ccc;
 }
 
+/* Shared sticky behaviour for horizontally pinned columns */
+.leagueTable__cell--sticky {
+  position: sticky;
+}
+
 /* Horizontally sticky Position column */
 .leagueTable__cell--pos {
-  position: sticky;
   left: 0;
   z-index: 1;
   background-color: #fff;
@@ -72,7 +76,6 @@
 
 /* Horizontally sticky Club column — left offset matches Position column width */
 .leagueTable .leagueTable__cell--club {
-  position: sticky;
   left: 96px;
   z-index: 2;
   background-color: #fff;

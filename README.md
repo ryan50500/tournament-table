@@ -21,7 +21,7 @@ I used React because I prefer building UIs in a component-based structure, which
 
 ### Why CSS Grid instead of `<table>`
 
-The obvious choice for tabular data is <table>, and that was my initial instinct. However, with sticky header and sticky columns as requirements, this wasn’t just a simple data display. I expected sticky columns on <table> elements to be a bit awkward, as applying custom layout and positioning styles to tables can be tricky. CSS Grid gives more direct control over layout and positioning, which made the sticky behaviour much easier to implement. Tables also don't scale down well on smaller screens if mobile support was ever needed.
+The obvious choice for tabular data is `<table>`, and that was my initial instinct. However, with sticky header and sticky columns as requirements, this wasn’t just a simple data display. I expected sticky columns on `<table>` elements to be a bit awkward, as applying custom layout and positioning styles to tables can be tricky. CSS Grid gives more direct control over layout and positioning, which made the sticky behaviour much easier to implement. Tables also don't scale down well on smaller screens if mobile support was ever needed.
 
 ### Column sizing with `minmax`
 
